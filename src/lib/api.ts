@@ -1,11 +1,11 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://portfolio-backend-82ws.onrender.com";
 
 export const getAuthToken = () => {
   if (typeof document !== 'undefined') {
     const name = "token=";
     const decodedCookie = decodeURIComponent(document.cookie);
     const ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
+    for (let i = 0; i < ca.length; i++) {
       let c = ca[i];
       while (c.charAt(0) == ' ') {
         c = c.substring(1);
@@ -24,7 +24,7 @@ export const apiFetch = async (endpoint: string, options: RequestInit = {}) => {
     ...options.headers,
     "Content-Type": "application/json",
   };
-  
+
   if (token) {
     (headers as any)["Authorization"] = `Bearer ${token}`;
   }

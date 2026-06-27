@@ -79,7 +79,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
           <div className="w-full h-[250px] md:h-[400px] relative rounded-3xl overflow-hidden mb-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={blog.cover_image.startsWith("http") ? blog.cover_image : `http://localhost:8000${blog.cover_image}`}
+              src={blog.cover_image.startsWith("http") ? blog.cover_image : `https://portfolio-backend-82ws.onrender.com${blog.cover_image}`}
               alt={blog.title}
               className="w-full h-full object-cover"
             />

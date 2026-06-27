@@ -2,15 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { 
-  Briefcase, 
-  GraduationCap, 
-  FolderGit2, 
-  Award, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Download, 
+import {
+  Briefcase,
+  GraduationCap,
+  FolderGit2,
+  Award,
+  Mail,
+  Phone,
+  MapPin,
+  Download,
   ExternalLink,
   ChevronRight,
   Menu,
@@ -374,7 +374,7 @@ export default function Home() {
           const heroTitleVal = (s.heroTitle === "My Portfolio" || !s.heroTitle) ? "Chandrabhan Yadav" : s.heroTitle;
           const subtitleVal = (s.heroSubtitle === "I build amazing products." || s.heroSubtitle === "AI Engineer & Full Stack Developer" || s.heroSubtitle === "AI Engineer | Full Stack Developer" || !s.heroSubtitle) ? defaultSettings.heroSubtitle : s.heroSubtitle;
           const imgVal = (s.heroImageUrl === "/images/default-hero.png" || !s.heroImageUrl) ? "/images/chandrabhan-hero.png" : s.heroImageUrl;
-          
+
           setSettings({
             title: titleVal,
             description: s.description || defaultSettings.description,
@@ -470,7 +470,7 @@ export default function Home() {
   const formatImage = (path?: string) => {
     if (!path) return "/placeholder.jpg";
     if (path.startsWith("http") || path.startsWith("/")) return path;
-    return `http://localhost:8000${path}`;
+    return `https://portfolio-backend-82ws.onrender.com${path}`;
   };
 
   const triggerChat = () => {
@@ -487,7 +487,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground antialiased transition-colors duration-300">
-      
+
       {/* Sticky Navigation Header */}
       <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -515,8 +515,8 @@ export default function Home() {
               <a href="#blog" className={`transition-colors hover:text-foreground ${activeSection === "blog" ? "text-primary" : ""}`}>Articles</a>
             )}
             <a href="#contact" className={`transition-colors hover:text-foreground ${activeSection === "contact" ? "text-primary" : ""}`}>Contact</a>
-            
-            <button 
+
+            <button
               onClick={triggerChat}
               className="flex items-center gap-1 text-primary hover:text-primary/80 font-extrabold uppercase tracking-wider text-xs border border-primary/20 px-2.5 py-1 rounded-lg bg-primary/10 transition-colors"
             >
@@ -524,9 +524,9 @@ export default function Home() {
             </button>
 
             {activeResume && (
-              <a 
-                href={formatImage(activeResume.file_url)} 
-                target="_blank" 
+              <a
+                href={formatImage(activeResume.file_url)}
+                target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm"
               >
@@ -553,7 +553,7 @@ export default function Home() {
           <a href="#achievements" onClick={() => setMobileMenuOpen(false)}>Achievements</a>
           {blogs.length > 0 && <a href="#blog" onClick={() => setMobileMenuOpen(false)}>Blog</a>}
           <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
-          <button 
+          <button
             onClick={() => {
               setMobileMenuOpen(false);
               triggerChat();
@@ -563,9 +563,9 @@ export default function Home() {
             <MessageSquare className="h-4 w-4" /> AI Assistant
           </button>
           {activeResume && (
-            <a 
-              href={formatImage(activeResume.file_url)} 
-              target="_blank" 
+            <a
+              href={formatImage(activeResume.file_url)}
+              target="_blank"
               rel="noreferrer"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-center gap-1.5 bg-blue-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold"
@@ -579,13 +579,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 md:py-32 bg-background border-b border-border/40">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left Column: Headline & Action */}
           <div className="lg:col-span-7 flex flex-col gap-6 text-left">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-none text-foreground">
               {settings?.title || "Chandrabhan Yadav"}
             </h1>
-            
+
             <h2 className="text-xl md:text-2xl font-bold text-primary tracking-tight">
               AI Engineer | Full Stack Developer
             </h2>
@@ -598,15 +598,15 @@ export default function Home() {
                 Building AI-powered applications, automation systems and production-grade web platforms.
               </p>
             </div>
-            
+
             <div className="flex flex-wrap gap-3.5 pt-2">
-              <a 
-                href="#projects" 
+              <a
+                href="#projects"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-sm transition-all hover:-translate-y-0.5 flex items-center gap-2"
               >
                 <FolderGit2 className="h-4 w-4" /> View Projects
               </a>
-              <a 
+              <a
                 href={activeResume ? formatImage(activeResume.file_url) : "#"}
                 target="_blank"
                 rel="noreferrer"
@@ -614,7 +614,7 @@ export default function Home() {
               >
                 <Download className="h-4 w-4" /> Download Resume
               </a>
-              <button 
+              <button
                 onClick={triggerChat}
                 className="border border-primary/20 bg-primary/5 hover:bg-primary/10 px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all text-primary flex items-center gap-2 shadow-sm"
               >
@@ -625,48 +625,48 @@ export default function Home() {
             {/* Circular Social Links under buttons */}
             <div className="flex flex-wrap gap-3 pt-2">
               {socials?.github && (
-                <a 
-                  href={socials.github} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={socials.github}
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-primary transition-colors shadow-sm"
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
                 </a>
               )}
               {socials?.linkedin && (
-                <a 
-                  href={socials.linkedin} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-primary transition-colors shadow-sm"
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" /></svg>
                 </a>
               )}
               {socials?.twitter && (
-                <a 
-                  href={socials.twitter} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={socials.twitter}
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-primary transition-colors shadow-sm"
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" /></svg>
                 </a>
               )}
               {socials?.instagram && (
-                <a 
-                  href={socials.instagram} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={socials.instagram}
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-primary transition-colors shadow-sm"
                 >
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
               )}
               {contact?.email && (
-                <a 
-                  href={`mailto:${contact.email}`} 
+                <a
+                  href={`mailto:${contact.email}`}
                   className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-primary transition-colors shadow-sm"
                 >
                   <Mail className="h-4 w-4" />
@@ -689,7 +689,7 @@ export default function Home() {
                   />
                 </div>
               )}
-              
+
               {/* Stats Container (Responsive Flow on Mobile, Floating on Desktop) */}
               <div className="flex flex-row lg:block gap-4 mt-6 lg:mt-0 justify-center">
                 {/* Floating Stat Card 1 */}
@@ -731,17 +731,17 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((item) => (
-              <div 
-                key={item._id} 
+              <div
+                key={item._id}
                 className="group rounded-3xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
               >
                 {item.screenshots && item.screenshots.length > 0 ? (
                   <div className="w-full relative overflow-hidden bg-muted border-b border-border aspect-video">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src={formatImage(item.screenshots[0])} 
-                      alt={item.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    <img
+                      src={formatImage(item.screenshots[0])}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 ) : (
@@ -808,8 +808,8 @@ export default function Home() {
 
           <div className="space-y-8">
             {experience.map((item) => (
-              <div 
-                key={item._id} 
+              <div
+                key={item._id}
                 className="group border border-border bg-card p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-md transition-all flex flex-col gap-6"
               >
                 <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center">
@@ -882,7 +882,7 @@ export default function Home() {
                 <h3 className="text-xs font-extrabold uppercase tracking-widest text-muted-foreground mb-4">{cat.category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill, sIdx) => (
-                    <span 
+                    <span
                       key={sIdx}
                       className="px-3 py-1.5 rounded-xl bg-muted border border-border text-xs font-bold text-foreground flex items-center gap-1.5 hover:border-primary/50 hover:bg-primary/10 transition-colors cursor-default"
                     >
@@ -919,10 +919,10 @@ export default function Home() {
                   {about.images.map((imgUrl, i) => (
                     <div key={i} className={`rounded-3xl overflow-hidden shadow-lg border border-border bg-muted aspect-square ${i === 0 ? 'col-span-2 aspect-video' : ''}`}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img 
-                        src={formatImage(imgUrl)} 
-                        alt="Profile snapshot" 
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                      <img
+                        src={formatImage(imgUrl)}
+                        alt="Profile snapshot"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   ))}
@@ -970,8 +970,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {education.map((item) => (
-              <div 
-                key={item._id} 
+              <div
+                key={item._id}
                 className="group border border-border bg-card p-6 rounded-3xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
               >
                 <div>
@@ -996,8 +996,8 @@ export default function Home() {
                 {item.certificates && item.certificates.length > 0 && (
                   <div className="mt-6 pt-4 border-t border-border/50 flex flex-wrap gap-2">
                     {item.certificates.map((cert, cIdx) => (
-                      <button 
-                        key={cIdx} 
+                      <button
+                        key={cIdx}
                         onClick={() => setSelectedCertificate(formatImage(cert))}
                         className="flex items-center gap-1 text-[10px] font-bold text-muted-foreground hover:text-primary transition-colors"
                       >
@@ -1028,13 +1028,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {achievements.map((item) => (
-              <div 
-                key={item._id} 
+              <div
+                key={item._id}
                 className="group border border-border bg-card p-6 rounded-3xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex gap-4 items-start">
                   {item.certificates && item.certificates.length > 0 ? (
-                    <div 
+                    <div
                       onClick={() => setSelectedCertificate(formatImage(item.certificates[0]))}
                       className="h-20 w-20 relative rounded-xl overflow-hidden flex-shrink-0 bg-muted border border-border cursor-pointer"
                     >
@@ -1056,7 +1056,7 @@ export default function Home() {
 
                 {item.certificates && item.certificates.length > 0 && (
                   <div className="mt-4 pt-4 border-t border-border/50 flex justify-end">
-                    <button 
+                    <button
                       onClick={() => setSelectedCertificate(formatImage(item.certificates[0]))}
                       className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-primary hover:text-primary/80 transition-colors"
                     >
@@ -1087,8 +1087,8 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogs.map((item) => (
-                <div 
-                  key={item._id} 
+                <div
+                  key={item._id}
                   className="group rounded-3xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                 >
                   {item.cover_image && (
@@ -1146,48 +1146,48 @@ export default function Home() {
               Get In Touch
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            
+
             {/* Left: Contact Form */}
             <div className="bg-card p-8 rounded-3xl border border-border shadow-sm">
               <h3 className="text-xl font-bold mb-6 text-foreground">Send an Inquiry</h3>
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
                   <label className="block text-xs font-extrabold uppercase tracking-wider mb-2 text-muted-foreground">Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     value={formName}
                     onChange={(e) => setFormName(e.target.value)}
                     required
-                    placeholder="Jane Doe" 
+                    placeholder="Jane Doe"
                     className="w-full rounded-xl border border-border px-4 py-2.5 text-sm bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-extrabold uppercase tracking-wider mb-2 text-muted-foreground">Email Address</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     value={formEmail}
                     onChange={(e) => setFormEmail(e.target.value)}
                     required
-                    placeholder="jane@company.com" 
+                    placeholder="jane@company.com"
                     className="w-full rounded-xl border border-border px-4 py-2.5 text-sm bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-extrabold uppercase tracking-wider mb-2 text-muted-foreground">Message</label>
-                  <textarea 
+                  <textarea
                     rows={4}
                     value={formMsg}
                     onChange={(e) => setFormMsg(e.target.value)}
                     required
-                    placeholder="Discuss project requirements..." 
+                    placeholder="Discuss project requirements..."
                     className="w-full rounded-xl border border-border px-4 py-2.5 text-sm bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
 
-                <button 
+                <button
                   type="submit"
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-xl font-bold text-sm shadow-sm transition-all hover:-translate-y-0.5"
                 >
@@ -1235,15 +1235,15 @@ export default function Home() {
 
               {/* Call-to-actions */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <a 
+                <a
                   href="https://wa.me/"
-                  target="_blank" 
+                  target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 border border-input bg-card hover:bg-accent hover:text-accent-foreground px-4 py-3 rounded-2xl text-xs font-bold shadow-sm transition-colors text-foreground"
                 >
                   WhatsApp Quick Chat
                 </a>
-                <button 
+                <button
                   onClick={triggerChat}
                   className="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-3 rounded-2xl text-xs font-bold shadow transition-colors"
                 >
@@ -1292,22 +1292,22 @@ export default function Home() {
 
       {/* Interactive Certificate Modal Overlay */}
       {selectedCertificate && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4 animate-in fade-in duration-200"
           onClick={() => setSelectedCertificate(null)}
         >
           <div className="relative bg-card border border-border p-2 rounded-3xl shadow-2xl max-w-3xl max-h-[85vh] overflow-hidden" onClick={e => e.stopPropagation()}>
-            <button 
+            <button
               onClick={() => setSelectedCertificate(null)}
               className="absolute top-4 right-4 z-10 p-1.5 rounded-full bg-background/80 text-foreground hover:bg-muted transition-colors border border-border"
             >
               <X className="h-5 w-5" />
             </button>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src={selectedCertificate} 
-              alt="Certificate Detail" 
-              className="w-full h-auto max-h-[80vh] object-contain rounded-2xl bg-muted" 
+            <img
+              src={selectedCertificate}
+              alt="Certificate Detail"
+              className="w-full h-auto max-h-[80vh] object-contain rounded-2xl bg-muted"
             />
           </div>
         </div>
